@@ -22,4 +22,5 @@ npm run dev
 cd mobile
 npm install -g expo-cli
 npm install
+npx expo start # or npm run android
 ```
