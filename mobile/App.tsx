@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.Text}>CU DO GABS</Text>
+      <Text style={styles.Text}>App.tsx bla bla bla</Text>
       <StatusBar barStyle="light-content" backgroundColor='transparent' translucent />
     </View>
   );
