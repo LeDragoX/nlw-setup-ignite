@@ -1,20 +1,16 @@
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
-import { PrismaClient } from '@prisma/client';
+import { appRoutes } from './routes';
 
+const DOMAIN = 'http://localhost';
+const PORT = 3333;
 const app = Fastify();
-const prisma = new PrismaClient();
 
 app.register(cors);
-
-app.get('/hello', async () => {
-  const habits = await prisma.habit.findMany();
-
-  return habits;
-});
+app.register(appRoutes);
 
 app.listen({
-  port: 3333,
+  port: PORT,
 }).then(() => {
-  console.log('HTTP Server running on http://localhost:3333');
+  console.log(`HTTP Server running on ${DOMAIN}:${PORT}`);
 });
